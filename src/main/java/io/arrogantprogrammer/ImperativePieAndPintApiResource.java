@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-@Path("/imperative")
+@Path("/pieandpint")
 public class ImperativePieAndPintApiResource {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ImperativePieAndPintApiResource.class);
@@ -28,8 +28,8 @@ public class ImperativePieAndPintApiResource {
         Beer beer = allBeers().get(new Random().nextInt(allBeers().size() - 1));
         return "%s with %s and %s pie served with a pint of %s".formatted(
                 pieClient.getProtein().get(new Random().nextInt(pieClient.getProtein().size() - 1)),
-                pieClient.getVeg().get(new Random().nextInt(pieClient.getVeg().size() - 1)),
-                pieClient.getFilling().get(new Random().nextInt(pieClient.getProtein().size() - 1)),
+                    pieClient.getVeg().get(new Random().nextInt(pieClient.getVeg().size() - 1)),
+                    pieClient.getFilling().get(new Random().nextInt(pieClient.getProtein().size() - 1)),
                 beer.name + " " + beer.tagline
         );
     }
